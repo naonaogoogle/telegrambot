@@ -1,0 +1,91 @@
+### Get request with a header
+GET https://httpbin.org/ip
+Accept: application/json
+
+### Get request with parameter
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+### Get request with environment variables
+GET {{host}}/get?show_env={{show_env}}
+Accept: application/json
+
+### Get request with disabled redirects
+# @no-redirect
+GET http://httpbin.org/status/301
+
+
+### Send POST request with json body
+POST https://httpbin.org/post
+Content-Type: application/json
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+### Send POST request with body as parameters
+POST https://httpbin.org/post
+Content-Type: application/x-www-form-urlencoded
+
+id=999&value=content
+
+### Send a form with the text and file fields
+POST https://httpbin.org/post
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="element-name"
+Content-Type: text/plain
+
+Name
+--WebAppBoundary
+Content-Disposition: form-data; name="data"; filename="data.json"
+Content-Type: application/json
+
+< ./request-form-data.json
+--WebAppBoundary--
+
+###
+
+###
+
+GET https://api.telegram.org/bot641008686:AAGn4AWVk4bXN1s_kVy1H52vZMFOkLT0MR4/getupdates
+
+### Send POST request with json body
+POST http://localhost/api/update
+Content-Type: application/json
+
+{
+  "update_id": 525305155,
+  "message": {
+    "message_id": 1,
+    "from": {
+      "id": 86633325,
+      "is_bot": false,
+      "first_name": "闹闹Google",
+      "username": "NaonaoGoogle",
+      "language_code": "zh-hans"
+    },
+    "chat": {
+      "id": 86633325,
+      "first_name": "闹闹Google",
+      "username": "NaonaoGoogle",
+      "type": "private"
+    },
+    "date": 1564409502,
+    "text": "曹尼玛的服务器炸了啊",
+    "entities": [
+      {
+        "offset": 0,
+        "length": 6,
+        "type": "bot_command"
+      }
+    ]
+  }
+}
+
+###
+
+
+
